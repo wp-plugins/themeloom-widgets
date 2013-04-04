@@ -1,0 +1,263 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ThemeLoomWidgets\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-04-02 14:13-0000\n"
+"PO-Revision-Date: 2013-04-02 14:13-0000\n"
+"Last-Translator: Tim Hyde <tim@livingos.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: ./\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../flickr-widget.php:13
+msgid "This widget displays a flickr badge."
+msgstr ""
+
+#: ../flickr-widget.php:20
+msgid "Flickr Widget"
+msgstr ""
+
+#: ../flickr-widget.php:50
+msgid "Widget Title"
+msgstr ""
+
+#: ../flickr-widget.php:55
+msgid "User or Group ID"
+msgstr ""
+
+#: ../flickr-widget.php:61
+msgid "Source : "
+msgstr ""
+
+#: ../flickr-widget.php:69 ../show-widgets.php:83 ../show-widgets.php:489
+msgid "Tag"
+msgstr ""
+
+#: ../flickr-widget.php:75
+msgid "Number of Images"
+msgstr ""
+
+#: ../flickr-widget.php:81
+msgid "Image size : "
+msgstr ""
+
+#: ../show-widgets.php:13
+msgid "Show teasers/list of posts with thumbs, filtered by category."
+msgstr ""
+
+#: ../show-widgets.php:14
+msgid "Show Posts"
+msgstr ""
+
+#: ../show-widgets.php:19 ../show-widgets.php:452 ../show-widgets.php:596
+#: ../twitter-widget.php:22
+msgid "Example"
+msgstr ""
+
+#: ../show-widgets.php:25
+msgid "Show teasers and/or thumbs of posts filtered by category"
+msgstr ""
+
+#: ../show-widgets.php:26 ../show-widgets.php:459 ../show-widgets.php:603
+#: ../twitter-widget.php:29
+msgid "Title:"
+msgstr ""
+
+#: ../show-widgets.php:28
+msgid "Category"
+msgstr ""
+
+#: ../show-widgets.php:30
+msgid "ALL"
+msgstr ""
+
+#: ../show-widgets.php:42 ../show-widgets.php:617
+msgid "Number of Posts:"
+msgstr ""
+
+#: ../show-widgets.php:47 ../show-widgets.php:630
+msgid "Show dates"
+msgstr ""
+
+#: ../show-widgets.php:53
+msgid "Show author"
+msgstr ""
+
+#: ../show-widgets.php:58
+msgid "Show tags"
+msgstr ""
+
+#: ../show-widgets.php:63
+msgid "Show categories"
+msgstr ""
+
+#: ../show-widgets.php:68
+msgid "Show post thumbnails"
+msgstr ""
+
+#: ../show-widgets.php:75
+msgid "Show post formats"
+msgstr ""
+
+#: ../show-widgets.php:82
+msgid "Show post heading"
+msgstr ""
+
+#: ../show-widgets.php:85 ../show-widgets.php:491
+msgid "h2"
+msgstr ""
+
+#: ../show-widgets.php:86 ../show-widgets.php:492
+msgid "h3"
+msgstr ""
+
+#: ../show-widgets.php:87 ../show-widgets.php:493
+msgid "h4"
+msgstr ""
+
+#: ../show-widgets.php:88 ../show-widgets.php:494
+msgid "h5"
+msgstr ""
+
+#: ../show-widgets.php:94
+msgid "Show post excerpt"
+msgstr ""
+
+#: ../show-widgets.php:96 ../show-widgets.php:475 ../show-widgets.php:623
+msgid "More Link Text"
+msgstr ""
+
+#: ../show-widgets.php:97 ../show-widgets.php:476 ../show-widgets.php:624
+msgid "More Link url"
+msgstr ""
+
+#: ../show-widgets.php:101 ../show-widgets.php:502
+msgid "Image Size"
+msgstr ""
+
+#: ../show-widgets.php:103 ../show-widgets.php:504
+msgid "Thumbnail"
+msgstr ""
+
+#: ../show-widgets.php:104 ../show-widgets.php:505
+msgid "Medium"
+msgstr ""
+
+#: ../show-widgets.php:105 ../show-widgets.php:506
+msgid "Large"
+msgstr ""
+
+#: ../show-widgets.php:119 ../show-widgets.php:520
+msgid ""
+"Thumb, medium and large images are set in Settings>Media. Other sizes may be "
+"available here depending on the theme."
+msgstr ""
+
+#: ../show-widgets.php:124 ../show-widgets.php:525
+msgid "Layout"
+msgstr ""
+
+#: ../show-widgets.php:126 ../show-widgets.php:527
+msgid "Default"
+msgstr ""
+
+#: ../show-widgets.php:127 ../show-widgets.php:128 ../show-widgets.php:129
+#: ../show-widgets.php:130 ../show-widgets.php:131 ../show-widgets.php:528
+#: ../show-widgets.php:529 ../show-widgets.php:530 ../show-widgets.php:531
+#: ../show-widgets.php:532
+msgid "Columns"
+msgstr ""
+
+#: ../show-widgets.php:386
+msgid "by "
+msgstr ""
+
+#: ../show-widgets.php:399
+#, php-format
+msgid "Tagged: %s"
+msgstr ""
+
+#: ../show-widgets.php:407
+#, php-format
+msgid "In: %s"
+msgstr ""
+
+#: ../show-widgets.php:446
+msgid "Show teasers/list of pages with thumbs."
+msgstr ""
+
+#: ../show-widgets.php:447
+msgid "Show Pages"
+msgstr ""
+
+#: ../show-widgets.php:461
+msgid "Parent Page"
+msgstr ""
+
+#: ../show-widgets.php:473
+msgid "Number of Pages to show:"
+msgstr ""
+
+#: ../show-widgets.php:482
+msgid "Show page thumbnails"
+msgstr ""
+
+#: ../show-widgets.php:488
+msgid "Show headings"
+msgstr ""
+
+#: ../show-widgets.php:499
+msgid "Show page excerpt"
+msgstr ""
+
+#: ../show-widgets.php:590
+msgid "Show latest posts in category with audio attachments."
+msgstr ""
+
+#: ../show-widgets.php:591
+msgid "Show Media Posts"
+msgstr ""
+
+#: ../show-widgets.php:605
+msgid "Post Category:"
+msgstr ""
+
+#: ../show-widgets.php:621
+msgid "Show excerpt"
+msgstr ""
+
+#: ../show-widgets.php:748
+msgid "listen/download"
+msgstr ""
+
+#: ../show-widgets.php:748
+msgid "Listen"
+msgstr ""
+
+#: ../show-widgets.php:753
+msgid "[no audio]"
+msgstr ""
+
+#: ../twitter-widget.php:11
+msgid "Show latest twitter tweets."
+msgstr ""
+
+#: ../twitter-widget.php:12
+msgid "Twitter Widget"
+msgstr ""
+
+#: ../twitter-widget.php:30
+msgid "Twitter Name:"
+msgstr ""
+
+#: ../twitter-widget.php:31
+msgid "Number of Tweets:"
+msgstr ""
+
+#: ../twitter-widget.php:82
+msgid "follow on twitter &rarr;"
+msgstr ""
