@@ -28,24 +28,6 @@ e.g.
 = Shortcode Parameters =
 
 * Attribute - Descriptiono	Values
-<<<<<<< HEAD
-* post_type	- Type of query	“pages” or “posts”
-* cat_id - Category ID for posts	e.g. “23?
-* num_posts	- Number of items to show	e.g. “5?
-* columns - Number of columns to layout	“1?, “2?, “3? or “4?
-* heading - Show headings	“true” or “false”
-* author - Show author link	“true” or “false”
-* tags - Show tags	“true” or “false”
-* categories - Show categories	“true” or “false”
-* thumbs - Show Post thumbnails	“true” or “false”
-* dates - Show Post Dates	“true” or “false”
-* content - Show post/page excerpt	“true” or “false”
-* parent_id - When showing pages, show children of this parent page.	e.g. “34?
-* thumbsize - Image size to use	use “widget” or “gallery”
-* entrytag - Heading tag for each item	e.g. “h3?
-* post_formats - Show post format icons	“true” or “false”
-* post_class - CSS class string to use for each item	default is “los-custom-post”
-=======
 * post_type	- Type of query	"pages" or "posts"
 * cat_id - Category ID for posts	e.g. "23?
 * num_posts	- Number of items to show	e.g. "5?
@@ -62,7 +44,6 @@ e.g.
 * entrytag - Heading tag for each item	e.g. "h3?
 * post_formats - Show post format icons	"true" or "false"
 * post_class - CSS class string to use for each item	default is "los-custom-post"
->>>>>>> master
 * show_sticky - Set to "1" to enable sticky posts function, "0" is deafult (i.e. sticky is ignored)
 
 = More Information =
