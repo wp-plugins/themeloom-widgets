@@ -31,6 +31,57 @@ function los_getTweets($count = 20, $username = false, $options = false) {
   
 }
 
+// This calculates a relative time, e.g. "1 minute ago"
+function los_relativeTime($time)
+    {
+        $second = 1;
+        $minute = 60 * $second;
+        $hour = 60 * $minute;
+        $day = 24 * $hour;
+        $month = 30 * $day;
+
+        $delta = time() - $time;
+
+        if ($delta < 1 * $minute)
+        {
+            return $delta == 1 ? "one second ago" : $delta . " seconds ago";
+        }
+        if ($delta < 2 * $minute)
+        {
+          return "a minute ago";
+        }
+        if ($delta < 45 * $minute)
+        {
+            return floor($delta / $minute) . " minutes ago";
+        }
+        if ($delta < 90 * $minute)
+        {
+          return "an hour ago";
+        }
+        if ($delta < 24 * $hour)
+        {
+          return floor($delta / $hour) . " hours ago";
+        }
+        if ($delta < 48 * $hour)
+        {
+          return "yesterday";
+        }
+        if ($delta < 30 * $day)
+        {
+            return floor($delta / $day) . " days ago";
+        }
+        if ($delta < 12 * $month)
+        {
+          $months = floor($delta / $day / 30);
+          return $months <= 1 ? "one month ago" : $months . " months ago";
+        }
+        else
+        {
+            $years = floor($delta / $day / 365);
+            return $years <= 1 ? "one year ago" : $years . " years ago";
+        }
+    }
+
 //define twitter widget
 class los_twitter_widget extends WP_Widget {
 	
@@ -156,8 +207,8 @@ class los_twitter_widget extends WP_Widget {
 					//    The Tweet timestamp must always be linked to the Tweet permalink.
 					echo '
 					<em>&rdquo;&ndash;
-						<a href="https://twitter.com/YOURUSERNAME/status/'.$tweet['id_str'].'" target="_blank">
-							'.date('h:i A M d',strtotime($tweet['created_at']. '- 8 hours')).'
+						<a href="https://twitter.com/'.$instance['twittername'].'/status/'.$tweet['id_str'].'" target="_blank">
+							'.los_relativeTime(strtotime( $tweet['created_at'] )).'
 						</a>
 					</em>';// -8 GMT for Pacific Standard Time
 				} 
