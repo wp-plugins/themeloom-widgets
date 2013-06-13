@@ -3,16 +3,16 @@ Contributors: livinogs
 Donate link: http://livingos.com/
 Tags: widgets, posts, pages, query, responsive, twitter, flickr
 Requires at least: 3.0.1
-Tested up to: 3.5.1
+Tested up to: 3.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A set of useful widgets created for adding more fluid content to our responsive themes. 
+A set of useful widgets created for adding more fluid content to any theme. 
 
 == Description ==
 
-A set of useful widgets created for adding more fluid content to our responsive themes. Also has a very useful shortcode for using some of the functionality inside a post or page. The plugin adds a set of new widgets, including:
+A set of useful widgets created for adding more fluid content to any theme. Especially designed for responive themes. Also has a very useful shortcode for using some of the functionality inside a post or page. The plugin adds a set of new widgets, including:
 
 *	Show Posts Widget - for showing posts excerpts, thumbs and post formats.
 *	Show Pages Widget" - Shows thumbs/excerpts of child pages of defined parent page.
