@@ -1,9 +1,9 @@
 === ThemeLoom Widgets ===
 Contributors: livinogs
 Donate link: http://livingos.com/
-Tags: widgets, posts, pages, query, responsive, twitter, flickr
-Requires at least: 3.0.1
-Tested up to: 3.2
+Tags: widgets, posts, pages, query, responsive, twitter, flickr, facebook
+Requires at least: 3.5
+Tested up to: 3.5.3
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -12,14 +12,15 @@ A set of useful widgets created for adding more fluid content to any theme.
 
 == Description ==
 
-A set of useful widgets created for adding more fluid content to any theme. Especially designed for responive themes. Also has a very useful shortcode for using some of the functionality inside a post or page. The plugin adds a set of new widgets, including:
+A set of useful widgets created for adding more fluid content to any theme. Especially designed for responsive themes. Also has a very useful shortcode for using some of the functionality inside a post or page. The plugin adds a set of new widgets, including:
 
 *	Show Posts Widget - for showing posts excerpts, thumbs and post formats.
 *	Show Pages Widget" - Shows thumbs/excerpts of child pages of defined parent page.
 *	flickr Widget - Show flickr thumbs
 *	Twitter Widget - show your latest tweets
+*	Facebook Widget - show your facebook page feed
 
-And also adds a powerful shortcode for usnig teh show posts/pages fucntionality in a post or page.
+And also adds a powerful shortcode for using the show posts/pages functionality in a post or page.
 
 e.g.
 
@@ -27,7 +28,7 @@ e.g.
 
 = Shortcode Parameters =
 
-* Attribute - Descriptiono	Values
+* Attribute - Description	Values
 * post_type	- Type of query	"pages" or "posts"
 * cat_id - Category ID for posts	e.g. "23?
 * num_posts	- Number of items to show	e.g. "5?
@@ -64,9 +65,17 @@ for further information see [ThemeLoom](http://themeloom.com/ "The ThemeLoom")
 
 == Screenshots ==
 
-add soon
+1. The Show Posts widget options.
+2. Facebook widget options.
+3. Example facebook front end.
 
 == Changelog ==
+
+= 1.2 =
+* Added a Facebook widget using Graph API
+
+= 1.1 =
+* Switched Twitter widget to use new API. Now requires api keys.
 
 = 1.0 =
 * First release.

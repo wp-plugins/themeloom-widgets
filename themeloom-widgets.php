@@ -2,7 +2,7 @@
 /*
 Plugin Name: ThemeLoom Widgets
 Description: A set of really useful widgets for showing posts, pages, tweets and your flickr images. Designed for use with responsive themes.
-Version: 1.1
+Version: 1.2
 License: GPLv2
 Author: Tim Hyde
 Author URI: http://livingos.com/
@@ -34,9 +34,10 @@ class ThemeLoomWidgets
 	/*
 	 *	Contsructor
 	 */
-	function ThemeLoomWidgets()
+	public function __construct() 
 	{
-	
+		
+		
 		// localization
 		add_action('plugins_loaded', array($this, 'SetLanguage'),1);
 		
@@ -58,6 +59,7 @@ class ThemeLoomWidgets
 		
 		//add theme support functions
 		add_action( 'after_setup_theme',    array( $this, 'addFeaturedImageSupport' ), 11 );
+		
 		
 		$this->errors = new WP_Error();
 	}
@@ -87,6 +89,7 @@ class ThemeLoomWidgets
 	
 	
 	}
+	
 	
 	/*
 	 *	Load language text domain
@@ -126,10 +129,10 @@ class ThemeLoomWidgets
 			
 		}
 		
-		// flickr widget
+		// fb widget
 		if (file_exists(plugin_dir_path(__FILE__ ). 'facebook-widget.php')){
 			require_once('facebook-widget.php'); 
-			register_widget('ThemeLoomFBWidget'); 
+			register_widget('ThemeLoom_Facebook_Widget'); 
 			
 		}
 		
@@ -162,5 +165,18 @@ class ThemeLoomWidgets
 	
 
 
+}
+
+//debug
+if(!function_exists('_log')){
+  function _log( $message ) {
+    if( WP_DEBUG === true ){
+      if( is_array( $message ) || is_object( $message ) ){
+        error_log( print_r( $message, true ) );
+      } else {
+        error_log( $message );
+      }
+    }
+  }
 }
 ?>

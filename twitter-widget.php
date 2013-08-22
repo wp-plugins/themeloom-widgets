@@ -153,7 +153,7 @@ class los_twitter_widget extends WP_Widget {
 		if ( $args['title'] )
 			echo $args['before_title'] . '<a href="http://www.twitter.com/'. $instance['twittername'] . '" target="_blank">' . esc_html( $args['title'] ) . '</a>' . $args['after_title'];
 				
-		echo '<div id="tweet" ><ul id="tweet-list">';	
+		echo '<div id="tweet" ><ul id="tweet-list" class="twitter-feed">';	
 		if( isset ( $tweets['error'] ) ) {
 			echo $tweets['error'];
 		} else {
@@ -217,7 +217,7 @@ class los_twitter_widget extends WP_Widget {
 			}
 		}
 		echo '</ul></div>';
-		echo '<div id="tweet-follow"><a href="http://www.twitter.com/'. $instance['twittername'] . '" target="_blank">'. __('follow on twitter &rarr;', 'livingos').'</a></div>';
+		echo '<div id="tweet-follow" class="tweet-follow"><a href="http://www.twitter.com/'. $instance['twittername'] . '" target="_blank">'. __('follow on twitter &rarr;', 'livingos').'</a></div>';
 		//end widget
 		echo $args['after_widget'];		
 		
