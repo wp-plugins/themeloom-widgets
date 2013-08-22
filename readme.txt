@@ -8,7 +8,7 @@ Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A set of useful widgets created for adding more fluid content to any theme. 
+A set of useful widgets created for adding more fluid content to any theme. Includes widgets for showing posts, pages, as well as Facebook and Twitter feeds.
 
 == Description ==
 
