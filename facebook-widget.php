@@ -19,7 +19,7 @@ class ThemeLoom_Facebook_Widget extends WP_Widget {
 
 	public function widget( $args, $instance ) {
 	
-		$pageinfo = livingos_get_fb_page_info( $instance['page_id'], $instance['auth_token'], 3600 );
+		$pageinfo = livingos_get_fb_page_info( $instance['page_id'], $instance['auth_token'], 21600 );
 		 
 		// outputs the content of the widget
 		$title = apply_filters( 'widget_title', $instance['title'] );
@@ -118,7 +118,7 @@ function livingos_get_fb_access_token( $appid, $appsc ) {
 /*
  * Get page info
  */
-function livingos_get_fb_page_info( $page_id, $auth_token, $cache_expire = 3600 ){
+function livingos_get_fb_page_info( $page_id, $auth_token, $cache_expire = 21600 ){
 	
 	//Page info : check cache
 	$cachename = "fbpage-" . md5( $page_id . $auth_token );
@@ -145,7 +145,7 @@ function livingos_get_fb_page_info( $page_id, $auth_token, $cache_expire = 3600 
 /*
  * Get page fee
  */
-function livingos_get_fb_page_feed( $page_id, $auth_token, $num_posts, $cache_expire = 3600 ){
+function livingos_get_fb_page_feed( $page_id, $auth_token, $num_posts, $cache_expire = 21600 ){
 	
 	//Page Feed : check cache
 	$cachename = "fbfeed-" . md5( $page_id . $auth_token . $num_posts );
@@ -183,7 +183,7 @@ function livingos_get_fb_page_feed( $page_id, $auth_token, $num_posts, $cache_ex
 		'page_title' => true,
 		'show_likes' => true,
 		'follow_message' => __('Join us on Facebook','livingos'),
-		'cache_expire' => 60
+		'cache_expire' => 21600
 	);
 	$args = wp_parse_args( $args, $defaults );
 	
