@@ -32,7 +32,7 @@ e.g.
 * post_type	- Type of query	"pages" or "posts"
 * cat_id - Category ID for posts	e.g. "23"
 * exclude_cats - post categories ids to exclude	e.g. "23,170,9"
-* num_posts	- Number of items to show	e.g. "5?
+* num_posts	- Number of items to show	e.g. "5"
 * columns - Number of columns to layout	"1", "2", "3" or "4"
 * heading - Show headings	"true" or "false"
 * author - Show author link	"true" or "false"
