@@ -16,7 +16,7 @@ class los_showposts_widget extends WP_Widget {
 
 	function form($instance) {
 		/* Set up some default widget settings. */
-		$defaults = array( 'title' => __('Example', 'livingos'), 'cat_id' => NULL, 'dates' =>'on', 'post_formats' => '', 'show_sticky' => 0, 'num_posts' => 5, 'more_link' => 'More', 'more_url' => home_url(),'thumbs' => 'on', 'tags' => '', 'categories'=> '','author'=>'', 'heading' => 'on', 'columns' => 1, 'content'=>'', 'thumbsize' => apply_filters('themeloom_widgets_defthumbsize','thumbnail'), 'entrytag' => 'h3');
+		$defaults = array( 'title' => __('Example', 'livingos'), 'cat_id' => NULL, 'dates' =>'on', 'post_formats' => '', 'show_sticky' => 0, 'exclude_cats' =>'', 'num_posts' => 5, 'more_link' => 'More', 'more_url' => home_url(),'thumbs' => 'on', 'tags' => '', 'categories'=> '','author'=>'', 'heading' => 'on', 'columns' => 1, 'content'=>'', 'thumbsize' => apply_filters('themeloom_widgets_defthumbsize','thumbnail'), 'entrytag' => 'h3');
 		$instance = wp_parse_args( (array) $instance, $defaults ); 
 		
 		// outputs the options form on admin
@@ -40,6 +40,7 @@ class los_showposts_widget extends WP_Widget {
 			</select>
 		</p>
 		<p><label for="<?php echo $this->get_field_id('num_posts'); ?>"><?php _e('Number of Posts:','livingos'); ?> <input class="widefat" id="<?php echo $this->get_field_id('num_posts'); ?>" name="<?php echo $this->get_field_name('num_posts'); ?>" type="text" value="<?php echo $instance['num_posts']; ?>" /></label></p>
+		<p><label for="<?php echo $this->get_field_id('exclude_cats'); ?>"><?php _e('Exclude Categories (e.g. 34,171,34 ):','livingos'); ?> <input class="widefat" id="<?php echo $this->get_field_id('exclude_cats'); ?>" name="<?php echo $this->get_field_name('exclude_cats'); ?>" type="text" value="<?php echo $instance['exclude_cats']; ?>" /></label></p>
 
 		<!--dates-->
 		<p>
@@ -149,6 +150,7 @@ class los_showposts_widget extends WP_Widget {
 		$new_instance['more_link'] = esc_html( $new_instance['more_link'] );
 		$new_instance['thumbsize'] = esc_html( $new_instance['thumbsize'] );
 		$new_instance['entrytag'] = $new_instance['entrytag'];
+		$new_instance['exclude_cats'] = $new_instance['exclude_cats'];
 		if (! isset($new_instance['post_formats'])) $new_instance['post_formats']='';
 		if (! isset($new_instance['content'])) $new_instance['content']='';
 		if (! isset($new_instance['dates'])) $new_instance['dates']='';
@@ -162,6 +164,7 @@ class los_showposts_widget extends WP_Widget {
 	}
 
 	function widget($args, $instance) {
+
 		// outputs the content of the widget
 		$args['title'] = $instance['title'];
 		$args['cat_id'] = $instance['cat_id'];
@@ -188,6 +191,7 @@ class los_showposts_widget extends WP_Widget {
 		$args['content'] = isset( $instance['content'] ) ? $instance['content'] : false;
 		$args['post_formats'] = isset( $instance['post_formats'] ) ? $instance['post_formats'] : false;
 		$args['post_class'] = 'los-custom-post los-widget'; 
+		$args['exclude_cats'] = $instance['exclude_cats'];
 		echo los_showPosts($args);
 	}
 
@@ -205,6 +209,7 @@ function los_showposts_shortcode( $attr ){
 		'before_widget' => '',
 		'after_widget' => '',
 		'cat_id' => 0,
+		'exclude_cats' => '',
 		'post_type' => '',
 		'parent_id' => 0,
 		'num_posts' => 5,
@@ -263,6 +268,7 @@ function los_showPosts($args = array()) {
 		'before_widget' => '',
 		'after_widget' => '',
 		'cat_id' => 0,
+		'exclude_cats' => '',
 		'post_type' => '',
 		'parent_id' => 0,
 		'num_posts' => 5,
@@ -313,11 +319,21 @@ function los_showPosts($args = array()) {
 			
 		);
 	} else {
+	
+		
 		$get_posts_args = array(
 			'cat' => $args['cat_id'],
 			'posts_per_page' => $args['num_posts'],
 			'ignore_sticky_posts' => !$args['show_sticky']
 		);
+		
+		// check for excluded cats
+		if ( $args['exclude_cats'] != '') {
+			$exc_cats = split(',', $args['exclude_cats']);
+			
+			$get_posts_args['category__not_in'] = $exc_cats;
+		}
+		
 		
 	}
 	
