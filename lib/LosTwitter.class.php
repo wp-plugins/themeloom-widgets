@@ -62,7 +62,7 @@ class LosTwitter {
 		  }
 		  return array('error'=>'Twitter said: '.$last_error);
 		} else {
-		  set_transient($cachename, $result, $this->defaults['cache_expire'] );
+		  set_transient($cachename, $result, $options['cache_expire'] );
 		  return $this->cropTweets($result,$count);
 		}
 	
