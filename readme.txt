@@ -3,7 +3,7 @@ Contributors: livinogs
 Donate link: http://livingos.com/
 Tags: widgets, posts, pages, query, responsive, twitter, flickr, facebook
 Requires at least: 3.5
-Tested up to: 3.6.1
+Tested up to: 3.8
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -32,7 +32,7 @@ e.g.
 * post_type	- Type of query	"pages" or "posts"
 * cat_id - Category ID for posts	e.g. "23"
 * exclude_cats - post categories ids to exclude	e.g. "23,170,9"
-* num_posts	- Number of items to show	e.g. "5"
+* num_posts	- Number of items to show	e.g. "5?
 * columns - Number of columns to layout	"1", "2", "3" or "4"
 * heading - Show headings	"true" or "false"
 * author - Show author link	"true" or "false"
@@ -71,6 +71,9 @@ for further information see [ThemeLoom](http://themeloom.com/ "The ThemeLoom")
 3. Example facebook front end.
 
 == Changelog ==
+
+= 1.4 =
+* Small fix for Facebook widget
 
 = 1.3 =
 * Added option to exclude post categories and a exclude_cats shortcode parameter.

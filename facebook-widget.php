@@ -205,90 +205,91 @@ function livingos_get_fb_page_feed( $page_id, $auth_token, $num_posts, $cache_ex
 	
 	// process feed 
 	$output .= "<ul class=\"facebook-feed\">";
-	
-	foreach ( $feedarray->data as $feed_data )
-	{
-		// Get the description of item or the message of the one who posted the item
-		$message = isset( $feed_data->message ) ? trim( $feed_data->message ) : null;
-		$message = preg_replace('/\n/', '<br />', $message);
+	if (!empty($feedarray)) {
+		foreach ( $feedarray->data as $feed_data )
+		{
+			// Get the description of item or the message of the one who posted the item
+			$message = isset( $feed_data->message ) ? trim( $feed_data->message ) : null;
+			$message = preg_replace('/\n/', '<br />', $message);
 
-		// Get the description of item or the message of the one who posted the item
-		$description = isset( $feed_data->description ) ? trim( $feed_data->description ) : null;
-		// Turn urls into links and replace new lines with <br />
-		$description = preg_replace(array('/((http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}\/\S*)/', '/\n/'), array("<a href='$1'>\\1</a>", '<br />'), $description);
-				
-		// Get the description of item or the message of the one who posted the item
-		$story = isset( $feed_data->story ) ? trim($feed_data->story ) : null;
-		$story = preg_replace('/\n/', '<br />', $story);
+			// Get the description of item or the message of the one who posted the item
+			$description = isset( $feed_data->description ) ? trim( $feed_data->description ) : null;
+			// Turn urls into links and replace new lines with <br />
+			$description = preg_replace(array('/((http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}\/\S*)/', '/\n/'), array("<a href='$1'>\\1</a>", '<br />'), $description);
+					
+			// Get the description of item or the message of the one who posted the item
+			$story = isset( $feed_data->story ) ? trim($feed_data->story ) : null;
+			$story = preg_replace('/\n/', '<br />', $story);
+			
 		
-	
-		//date
-		$date_format = get_option( 'date_format' );
-		$time_format = get_option( 'time_format' );
-		//$pub_date = date( $date_format . ' ' . $time_format, strtotime( $feed_data->created_time ) );
-		$pub_date = los_relativeTime( strtotime( $feed_data->created_time ));
-		
-		// images
-		if ( isset($feed_data->picture) ) {
-			$img = "<img src='". htmlentities($feed_data->picture) ."'  />\n";
-		}
-		
-		// links
-		if (!empty($feed_data->link)) {
-					$link = $feed_data->link;
-					//Check whether it links to facebook or somewhere else
-					$facebook_str = 'facebook.com';
-					if(stripos($link, $facebook_str) !== false) {
-						$link_text = __('View on Facebook','livingos');
-					} else {
-						$link_text = __('View Link','livingos');
+			//date
+			$date_format = get_option( 'date_format' );
+			$time_format = get_option( 'time_format' );
+			//$pub_date = date( $date_format . ' ' . $time_format, strtotime( $feed_data->created_time ) );
+			$pub_date = los_relativeTime( strtotime( $feed_data->created_time ));
+			
+			// images
+			if ( isset($feed_data->picture) ) {
+				$img = "<img src='". htmlentities($feed_data->picture) ."'  />\n";
+			}
+			
+			// links
+			if (!empty($feed_data->link)) {
+						$link = $feed_data->link;
+						//Check whether it links to facebook or somewhere else
+						$facebook_str = 'facebook.com';
+						if(stripos($link, $facebook_str) !== false) {
+							$link_text = __('View on Facebook','livingos');
+						} else {
+							$link_text = __('View Link','livingos');
+						}
 					}
-				}
-		
-		
-		
-		// start output generation
-		$output .= "<li class=\"{$feed_data->type}\" >";
-		
-								
-		switch ( $feed_data->type ) {
-			case 'link':
-				if ( $args['post_meta'] ) {
-					$output .= "<p class=\"fb-meta\"><strong>{$feed_data->from->name}</strong> " . __('shared a link:','livingos');
-					$output .= "</br><span class=\"fb-pubdate\">{$pub_date}</span></p>\n";
-				}
-				$output .= "<p class=\"content\">". $message ."</p>\n";
-				$output .= "<a class=\"fb-link-preview clearfix\" href=\"{$link}\" title=\"{$link_text}\" >";
-				$output .= "{$img}<h4>{$feed_data->name}</h4><p>{$feed_data->description}</p>";
-				$output .= '</a>';
-				break;
-			case 'status':
-				if ( $args['post_meta'] ) {
-					$output .= "<p class=\"fb-meta\"><strong>{$feed_data->from->name}</strong>";
-					$output .= "</br><span class=\"fb-pubdate\">{$pub_date}</span>";
-					$output .= "</p>\n";
-				}
-				if ( $message != null  )
-					$output .= "<p class='message'>". $message ."</p>\n";
-				else if ( $story != null )
-					$output .= "<p class='message'>". $story ."</p>\n";
-				
-				break;
-			default:
-				if ( $args['post_meta'] ) {
-					$output .= "<p class=\"fb-meta\"><strong>{$feed_data->from->name}</strong>";
-					$output .= "</br><span class=\"fb-pubdate\">{$pub_date}</span>";
-					$output .= "</p>\n";
-				}
-				if ( $message != null  )
-					$output .= "<p class='message'>". $message ."</p>\n";
-				else if ( $story != null )
-					$output .= "<p class='message'>". $story ."</p>\n";
-				
-		
+			
+			
+			
+			// start output generation
+			$output .= "<li class=\"{$feed_data->type}\" >";
+			
+									
+			switch ( $feed_data->type ) {
+				case 'link':
+					if ( $args['post_meta'] ) {
+						$output .= "<p class=\"fb-meta\"><strong>{$feed_data->from->name}</strong> " . __('shared a link:','livingos');
+						$output .= "</br><span class=\"fb-pubdate\">{$pub_date}</span></p>\n";
+					}
+					$output .= "<p class=\"content\">". $message ."</p>\n";
+					$output .= "<a class=\"fb-link-preview clearfix\" href=\"{$link}\" title=\"{$link_text}\" >";
+					$output .= "{$img}<h4>{$feed_data->name}</h4><p>{$feed_data->description}</p>";
+					$output .= '</a>';
+					break;
+				case 'status':
+					if ( $args['post_meta'] ) {
+						$output .= "<p class=\"fb-meta\"><strong>{$feed_data->from->name}</strong>";
+						$output .= "</br><span class=\"fb-pubdate\">{$pub_date}</span>";
+						$output .= "</p>\n";
+					}
+					if ( $message != null  )
+						$output .= "<p class='message'>". $message ."</p>\n";
+					else if ( $story != null )
+						$output .= "<p class='message'>". $story ."</p>\n";
+					
+					break;
+				default:
+					if ( $args['post_meta'] ) {
+						$output .= "<p class=\"fb-meta\"><strong>{$feed_data->from->name}</strong>";
+						$output .= "</br><span class=\"fb-pubdate\">{$pub_date}</span>";
+						$output .= "</p>\n";
+					}
+					if ( $message != null  )
+						$output .= "<p class='message'>". $message ."</p>\n";
+					else if ( $story != null )
+						$output .= "<p class='message'>". $story ."</p>\n";
+					
+			
+			}
+			
+			$output .= "</li>";
 		}
-		
-		$output .= "</li>";
 	}
 	$output .= "</ul>";
 	$output .= "<a class=\"fb-pagelink\" href=\"{$pageinfo->link}\" >" . $args['follow_message'] . "</a>";
