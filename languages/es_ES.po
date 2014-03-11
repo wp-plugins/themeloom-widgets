@@ -1,0 +1,270 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ThemeLoomWidgets\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-04-02 14:13-0000\n"
+"PO-Revision-Date: 2014-02-13 12:59+0100\n"
+"Last-Translator: jelena kovacevic <jecajeca260@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: ./\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../flickr-widget.php:13
+msgid "This widget displays a flickr badge."
+msgstr "Este widget muestra una insignia flickr."
+
+#: ../flickr-widget.php:20
+msgid "Flickr Widget"
+msgstr "Widget Flickr"
+
+#: ../flickr-widget.php:50
+msgid "Widget Title"
+msgstr "Título Widget"
+
+#: ../flickr-widget.php:55
+msgid "User or Group ID"
+msgstr "ID de grupo o de usuario"
+
+#: ../flickr-widget.php:61
+msgid "Source : "
+msgstr "Fuente:"
+
+#: ../flickr-widget.php:69 ../show-widgets.php:83 ../show-widgets.php:489
+msgid "Tag"
+msgstr "Etiqueta"
+
+#: ../flickr-widget.php:75
+msgid "Number of Images"
+msgstr "Número de imágenes:"
+
+#: ../flickr-widget.php:81
+msgid "Image size : "
+msgstr "Tamaño imagen:"
+
+#: ../show-widgets.php:13
+msgid "Show teasers/list of posts with thumbs, filtered by category."
+msgstr ""
+"Mostrar teasers / lista de mensajes con vistas miniatura, filtrados por "
+"categoría."
+
+#: ../show-widgets.php:14
+msgid "Show Posts"
+msgstr "Mostrar Mensajes"
+
+#: ../show-widgets.php:19 ../show-widgets.php:452 ../show-widgets.php:596
+#: ../twitter-widget.php:22
+msgid "Example"
+msgstr "Ejemplo"
+
+#: ../show-widgets.php:25
+msgid "Show teasers and/or thumbs of posts filtered by category"
+msgstr ""
+"Mostrar teasers y / o las miniaturas de los mensajes filtrados por categoría"
+
+#: ../show-widgets.php:26 ../show-widgets.php:459 ../show-widgets.php:603
+#: ../twitter-widget.php:29
+msgid "Title:"
+msgstr "Título:"
+
+#: ../show-widgets.php:28
+msgid "Category"
+msgstr "Categoría"
+
+#: ../show-widgets.php:30
+msgid "ALL"
+msgstr "TODOS"
+
+#: ../show-widgets.php:42 ../show-widgets.php:617
+msgid "Number of Posts:"
+msgstr "Cantidad de Mensajes:"
+
+#: ../show-widgets.php:47 ../show-widgets.php:630
+msgid "Show dates"
+msgstr "Mostrar fechas"
+
+#: ../show-widgets.php:53
+msgid "Show author"
+msgstr "Mostrar autor"
+
+#: ../show-widgets.php:58
+msgid "Show tags"
+msgstr "Mostrar etiquetas"
+
+#: ../show-widgets.php:63
+msgid "Show categories"
+msgstr "Mostrar categorías"
+
+#: ../show-widgets.php:68
+msgid "Show post thumbnails"
+msgstr "Mostrar miniaturas de mensajes"
+
+#: ../show-widgets.php:75
+msgid "Show post formats"
+msgstr "Mostrar formatos de mensajes"
+
+#: ../show-widgets.php:82
+msgid "Show post heading"
+msgstr "Mostrar encabezado de mensaje"
+
+#: ../show-widgets.php:85 ../show-widgets.php:491
+msgid "h2"
+msgstr "h2"
+
+#: ../show-widgets.php:86 ../show-widgets.php:492
+msgid "h3"
+msgstr "h3"
+
+#: ../show-widgets.php:87 ../show-widgets.php:493
+msgid "h4"
+msgstr "h4"
+
+#: ../show-widgets.php:88 ../show-widgets.php:494
+msgid "h5"
+msgstr "h5"
+
+#: ../show-widgets.php:94
+msgid "Show post excerpt"
+msgstr "Mostrar extracto mensaje"
+
+#: ../show-widgets.php:96 ../show-widgets.php:475 ../show-widgets.php:623
+msgid "More Link Text"
+msgstr "Más Texto del Enlace"
+
+#: ../show-widgets.php:97 ../show-widgets.php:476 ../show-widgets.php:624
+msgid "More Link url"
+msgstr "¡Más url de Enlace!"
+
+#: ../show-widgets.php:101 ../show-widgets.php:502
+msgid "Image Size"
+msgstr "Tamaño Imagen"
+
+#: ../show-widgets.php:103 ../show-widgets.php:504
+msgid "Thumbnail"
+msgstr "Vista miniatura"
+
+#: ../show-widgets.php:104 ../show-widgets.php:505
+msgid "Medium"
+msgstr "Mediano"
+
+#: ../show-widgets.php:105 ../show-widgets.php:506
+msgid "Large"
+msgstr "Grande,"
+
+#: ../show-widgets.php:119 ../show-widgets.php:520
+msgid ""
+"Thumb, medium and large images are set in Settings>Media. Other sizes may be "
+"available here depending on the theme."
+msgstr ""
+"Miniaturas de imágenes medianas y grandes se establecen en Configuración> "
+"Media. Otras medidas pueden estar disponibles aquí en función del tema."
+
+#: ../show-widgets.php:124 ../show-widgets.php:525
+msgid "Layout"
+msgstr "Diseño"
+
+#: ../show-widgets.php:126 ../show-widgets.php:527
+msgid "Default"
+msgstr "Predeterminadas"
+
+#: ../show-widgets.php:127 ../show-widgets.php:128 ../show-widgets.php:129
+#: ../show-widgets.php:130 ../show-widgets.php:131 ../show-widgets.php:528
+#: ../show-widgets.php:529 ../show-widgets.php:530 ../show-widgets.php:531
+#: ../show-widgets.php:532
+msgid "Columns"
+msgstr "Columnas"
+
+#: ../show-widgets.php:386
+msgid "by "
+msgstr "por"
+
+#: ../show-widgets.php:399
+#, php-format
+msgid "Tagged: %s"
+msgstr "Etiquetado: %s"
+
+#: ../show-widgets.php:407
+#, php-format
+msgid "In: %s"
+msgstr "En: %s"
+
+#: ../show-widgets.php:446
+msgid "Show teasers/list of pages with thumbs."
+msgstr "Mostrar teasers / lista de páginas con miniaturas"
+
+#: ../show-widgets.php:447
+msgid "Show Pages"
+msgstr "Mostrar páginas"
+
+#: ../show-widgets.php:461
+msgid "Parent Page"
+msgstr "Páginas Padres"
+
+#: ../show-widgets.php:473
+msgid "Number of Pages to show:"
+msgstr "Número de páginas para mostrar:"
+
+#: ../show-widgets.php:482
+msgid "Show page thumbnails"
+msgstr "Mostrar miniaturas de página"
+
+#: ../show-widgets.php:488
+msgid "Show headings"
+msgstr "Mostrar encabezados"
+
+#: ../show-widgets.php:499
+msgid "Show page excerpt"
+msgstr "Mostrar extracto de página"
+
+#: ../show-widgets.php:590
+msgid "Show latest posts in category with audio attachments."
+msgstr ""
+"Mostrar todos los mensajes en la categoría con archivos adjuntos de audio."
+
+#: ../show-widgets.php:591
+msgid "Show Media Posts"
+msgstr "Mostrar Publicaciones de Medios"
+
+#: ../show-widgets.php:605
+msgid "Post Category:"
+msgstr "Categoría de publicación:"
+
+#: ../show-widgets.php:621
+msgid "Show excerpt"
+msgstr "Mostrar extracto"
+
+#: ../show-widgets.php:748
+msgid "listen/download"
+msgstr "escuchar / descargar"
+
+#: ../show-widgets.php:748
+msgid "Listen"
+msgstr "Escuchar"
+
+#: ../show-widgets.php:753
+msgid "[no audio]"
+msgstr "[sin audio]"
+
+#: ../twitter-widget.php:11
+msgid "Show latest twitter tweets."
+msgstr "Mostrar últimos tweets de Twitter"
+
+#: ../twitter-widget.php:12
+msgid "Twitter Widget"
+msgstr "Widget Twitter"
+
+#: ../twitter-widget.php:30
+msgid "Twitter Name:"
+msgstr "Nombre Twitter:"
+
+#: ../twitter-widget.php:31
+msgid "Number of Tweets:"
+msgstr "Número de Tweets:"
+
+#: ../twitter-widget.php:82
+msgid "follow on twitter &rarr;"
+msgstr "siga en twitter &rarr;"
