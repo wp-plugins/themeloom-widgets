@@ -3,7 +3,7 @@ Contributors: livinogs
 Donate link: http://livingos.com/
 Tags: widgets, posts, pages, query, responsive, twitter, flickr, facebook
 Requires at least: 3.5
-Tested up to: 3.8
+Tested up to: 3.8.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -52,6 +52,9 @@ e.g.
 
 For further information see [ThemeLoom](http://themeloom.com/ "The ThemeLoom")
 
+= Thanks =
+* to Andrew Kurtis for Spanish language files
+
 == Installation ==
 
 
@@ -71,6 +74,9 @@ for further information see [ThemeLoom](http://themeloom.com/ "The ThemeLoom")
 3. Example facebook front end.
 
 == Changelog ==
+
+= 1.5 =
+* Added Spanish language files (thanks to Andrew Kurtis)
 
 = 1.4 =
 * Small fix for Facebook widget
