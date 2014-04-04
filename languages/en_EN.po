@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ThemeLoomWidgets\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-04-02 14:13-0000\n"
-"PO-Revision-Date: 2013-04-02 14:13-0000\n"
+"POT-Creation-Date: 2014-04-04 13:46-0000\n"
+"PO-Revision-Date: 2014-04-04 13:47-0000\n"
 "Last-Translator: Tim Hyde <tim@livingos.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -12,6 +12,105 @@ msgstr ""
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: ./\n"
 "X-Poedit-SearchPath-0: ..\n"
+
+#: ../facebook-widget.php:16
+msgid "Displays your Facebook page feed on your site."
+msgstr ""
+
+#: ../facebook-widget.php:40
+msgid "Facebook Page Feed"
+msgstr ""
+
+#: ../facebook-widget.php:41 ../facebook-widget.php:205
+msgid "Join us on Facebook"
+msgstr ""
+
+#: ../facebook-widget.php:46
+msgid "Show your latest posts from your Facebook page:"
+msgstr ""
+
+#: ../facebook-widget.php:48
+msgid "Widget Title:"
+msgstr ""
+
+#: ../facebook-widget.php:51
+msgid "Facebook API Keys"
+msgstr ""
+
+#: ../facebook-widget.php:52
+msgid ""
+"This widget requires a Facebook API key. Get one here by creating an app:  "
+"<a href=\"https://developers.facebook.com/apps\">Create App</a>"
+msgstr ""
+
+#: ../facebook-widget.php:53
+msgid ""
+"When creating an application for this widget, you just need basic settings."
+msgstr ""
+
+#: ../facebook-widget.php:55
+msgid "App ID:"
+msgstr ""
+
+#: ../facebook-widget.php:57
+msgid "App Secret:"
+msgstr ""
+
+#: ../facebook-widget.php:61
+msgid "What to Show"
+msgstr ""
+
+#: ../facebook-widget.php:63
+msgid "Page ID:"
+msgstr ""
+
+#: ../facebook-widget.php:67
+msgid "Number of items to show:"
+msgstr ""
+
+#: ../facebook-widget.php:72
+msgid "Show post headers"
+msgstr ""
+
+#: ../facebook-widget.php:75
+msgid "Show page title"
+msgstr ""
+
+#: ../facebook-widget.php:79
+msgid "Show Likes count"
+msgstr ""
+
+#: ../facebook-widget.php:81
+msgid "Feed : "
+msgstr ""
+
+#: ../facebook-widget.php:82
+msgid "All Activity"
+msgstr ""
+
+#: ../facebook-widget.php:83
+msgid "Only Page's Posts "
+msgstr ""
+
+#: ../facebook-widget.php:86
+msgid "Follow button message:"
+msgstr ""
+
+#: ../facebook-widget.php:90
+msgid "Cache (s):"
+msgstr ""
+
+#: ../facebook-widget.php:263
+msgid "View on Facebook"
+msgstr ""
+
+#: ../facebook-widget.php:265
+msgid "View Link"
+msgstr ""
+
+#: ../facebook-widget.php:278
+msgid "shared a link:"
+msgstr ""
 
 #: ../flickr-widget.php:13
 msgid "This widget displays a flickr badge."
@@ -33,7 +132,7 @@ msgstr ""
 msgid "Source : "
 msgstr ""
 
-#: ../flickr-widget.php:69 ../show-widgets.php:83 ../show-widgets.php:489
+#: ../flickr-widget.php:69 ../show-widgets.php:91 ../show-widgets.php:519
 msgid "Tag"
 msgstr ""
 
@@ -53,8 +152,8 @@ msgstr ""
 msgid "Show Posts"
 msgstr ""
 
-#: ../show-widgets.php:19 ../show-widgets.php:452 ../show-widgets.php:596
-#: ../twitter-widget.php:22
+#: ../show-widgets.php:19 ../show-widgets.php:482 ../show-widgets.php:626
+#: ../twitter-widget.php:96
 msgid "Example"
 msgstr ""
 
@@ -62,8 +161,8 @@ msgstr ""
 msgid "Show teasers and/or thumbs of posts filtered by category"
 msgstr ""
 
-#: ../show-widgets.php:26 ../show-widgets.php:459 ../show-widgets.php:603
-#: ../twitter-widget.php:29
+#: ../show-widgets.php:26 ../show-widgets.php:489 ../show-widgets.php:633
+#: ../twitter-widget.php:103
 msgid "Title:"
 msgstr ""
 
@@ -75,189 +174,233 @@ msgstr ""
 msgid "ALL"
 msgstr ""
 
-#: ../show-widgets.php:42 ../show-widgets.php:617
+#: ../show-widgets.php:42 ../show-widgets.php:647
 msgid "Number of Posts:"
 msgstr ""
 
-#: ../show-widgets.php:47 ../show-widgets.php:630
+#: ../show-widgets.php:43
+msgid "Exclude Categories (e.g. 34,171,34 ):"
+msgstr ""
+
+#: ../show-widgets.php:48 ../show-widgets.php:660
 msgid "Show dates"
 msgstr ""
 
-#: ../show-widgets.php:53
+#: ../show-widgets.php:54
 msgid "Show author"
 msgstr ""
 
-#: ../show-widgets.php:58
+#: ../show-widgets.php:59
 msgid "Show tags"
 msgstr ""
 
-#: ../show-widgets.php:63
+#: ../show-widgets.php:64
 msgid "Show categories"
 msgstr ""
 
-#: ../show-widgets.php:68
+#: ../show-widgets.php:69
 msgid "Show post thumbnails"
 msgstr ""
 
-#: ../show-widgets.php:75
+#: ../show-widgets.php:76
 msgid "Show post formats"
 msgstr ""
 
-#: ../show-widgets.php:82
+#: ../show-widgets.php:83
+msgid "Enable Sticky Posts"
+msgstr ""
+
+#: ../show-widgets.php:90
 msgid "Show post heading"
 msgstr ""
 
-#: ../show-widgets.php:85 ../show-widgets.php:491
+#: ../show-widgets.php:93 ../show-widgets.php:521
 msgid "h2"
 msgstr ""
 
-#: ../show-widgets.php:86 ../show-widgets.php:492
+#: ../show-widgets.php:94 ../show-widgets.php:522
 msgid "h3"
 msgstr ""
 
-#: ../show-widgets.php:87 ../show-widgets.php:493
+#: ../show-widgets.php:95 ../show-widgets.php:523
 msgid "h4"
 msgstr ""
 
-#: ../show-widgets.php:88 ../show-widgets.php:494
+#: ../show-widgets.php:96 ../show-widgets.php:524
 msgid "h5"
 msgstr ""
 
-#: ../show-widgets.php:94
+#: ../show-widgets.php:102
 msgid "Show post excerpt"
 msgstr ""
 
-#: ../show-widgets.php:96 ../show-widgets.php:475 ../show-widgets.php:623
+#: ../show-widgets.php:104 ../show-widgets.php:505 ../show-widgets.php:653
 msgid "More Link Text"
 msgstr ""
 
-#: ../show-widgets.php:97 ../show-widgets.php:476 ../show-widgets.php:624
+#: ../show-widgets.php:105 ../show-widgets.php:506 ../show-widgets.php:654
 msgid "More Link url"
 msgstr ""
 
-#: ../show-widgets.php:101 ../show-widgets.php:502
+#: ../show-widgets.php:109 ../show-widgets.php:532
 msgid "Image Size"
 msgstr ""
 
-#: ../show-widgets.php:103 ../show-widgets.php:504
+#: ../show-widgets.php:111 ../show-widgets.php:534
 msgid "Thumbnail"
 msgstr ""
 
-#: ../show-widgets.php:104 ../show-widgets.php:505
+#: ../show-widgets.php:112 ../show-widgets.php:535
 msgid "Medium"
 msgstr ""
 
-#: ../show-widgets.php:105 ../show-widgets.php:506
+#: ../show-widgets.php:113 ../show-widgets.php:536
 msgid "Large"
 msgstr ""
 
-#: ../show-widgets.php:119 ../show-widgets.php:520
+#: ../show-widgets.php:127 ../show-widgets.php:550
 msgid ""
 "Thumb, medium and large images are set in Settings>Media. Other sizes may be "
 "available here depending on the theme."
 msgstr ""
 
-#: ../show-widgets.php:124 ../show-widgets.php:525
+#: ../show-widgets.php:132 ../show-widgets.php:555
 msgid "Layout"
 msgstr ""
 
-#: ../show-widgets.php:126 ../show-widgets.php:527
+#: ../show-widgets.php:134 ../show-widgets.php:557
 msgid "Default"
 msgstr ""
 
-#: ../show-widgets.php:127 ../show-widgets.php:128 ../show-widgets.php:129
-#: ../show-widgets.php:130 ../show-widgets.php:131 ../show-widgets.php:528
-#: ../show-widgets.php:529 ../show-widgets.php:530 ../show-widgets.php:531
-#: ../show-widgets.php:532
+#: ../show-widgets.php:135 ../show-widgets.php:136 ../show-widgets.php:137
+#: ../show-widgets.php:138 ../show-widgets.php:139 ../show-widgets.php:558
+#: ../show-widgets.php:559 ../show-widgets.php:560 ../show-widgets.php:561
+#: ../show-widgets.php:562
 msgid "Columns"
 msgstr ""
 
-#: ../show-widgets.php:386
+#: ../show-widgets.php:416
 msgid "by "
 msgstr ""
 
-#: ../show-widgets.php:399
+#: ../show-widgets.php:429
 #, php-format
 msgid "Tagged: %s"
 msgstr ""
 
-#: ../show-widgets.php:407
+#: ../show-widgets.php:437
 #, php-format
 msgid "In: %s"
 msgstr ""
 
-#: ../show-widgets.php:446
+#: ../show-widgets.php:476
 msgid "Show teasers/list of pages with thumbs."
 msgstr ""
 
-#: ../show-widgets.php:447
+#: ../show-widgets.php:477
 msgid "Show Pages"
 msgstr ""
 
-#: ../show-widgets.php:461
+#: ../show-widgets.php:491
 msgid "Parent Page"
 msgstr ""
 
-#: ../show-widgets.php:473
+#: ../show-widgets.php:503
 msgid "Number of Pages to show:"
 msgstr ""
 
-#: ../show-widgets.php:482
+#: ../show-widgets.php:512
 msgid "Show page thumbnails"
 msgstr ""
 
-#: ../show-widgets.php:488
+#: ../show-widgets.php:518
 msgid "Show headings"
 msgstr ""
 
-#: ../show-widgets.php:499
+#: ../show-widgets.php:529
 msgid "Show page excerpt"
 msgstr ""
 
-#: ../show-widgets.php:590
+#: ../show-widgets.php:620
 msgid "Show latest posts in category with audio attachments."
 msgstr ""
 
-#: ../show-widgets.php:591
+#: ../show-widgets.php:621
 msgid "Show Media Posts"
 msgstr ""
 
-#: ../show-widgets.php:605
+#: ../show-widgets.php:635
 msgid "Post Category:"
 msgstr ""
 
-#: ../show-widgets.php:621
+#: ../show-widgets.php:651
 msgid "Show excerpt"
 msgstr ""
 
-#: ../show-widgets.php:748
+#: ../show-widgets.php:778
 msgid "listen/download"
 msgstr ""
 
-#: ../show-widgets.php:748
+#: ../show-widgets.php:778
 msgid "Listen"
 msgstr ""
 
-#: ../show-widgets.php:753
+#: ../show-widgets.php:783
 msgid "[no audio]"
 msgstr ""
 
-#: ../twitter-widget.php:11
+#: ../twitter-widget.php:89
 msgid "Show latest twitter tweets."
 msgstr ""
 
-#: ../twitter-widget.php:12
+#: ../twitter-widget.php:90
 msgid "Twitter Widget"
 msgstr ""
 
-#: ../twitter-widget.php:30
+#: ../twitter-widget.php:102
+msgid "Show your latest tweets from your twitter account:"
+msgstr ""
+
+#: ../twitter-widget.php:105
+msgid ""
+"This widget requires a Twitter API key. Get one here:  <a href=\"http://dev."
+"twitter.com/apps\">http://dev.twitter.com</a>"
+msgstr ""
+
+#: ../twitter-widget.php:106
+msgid ""
+"When creating an application for this widget, you don't need to set a "
+"callback location and you only need read access."
+msgstr ""
+
+#: ../twitter-widget.php:109
+msgid "Consumer Key:"
+msgstr ""
+
+#: ../twitter-widget.php:110
+msgid "Consumer Secret:"
+msgstr ""
+
+#: ../twitter-widget.php:111
+msgid "Access Token:"
+msgstr ""
+
+#: ../twitter-widget.php:112
+msgid "Access Token Secret:"
+msgstr ""
+
+#: ../twitter-widget.php:114
 msgid "Twitter Name:"
 msgstr ""
 
-#: ../twitter-widget.php:31
+#: ../twitter-widget.php:115
 msgid "Number of Tweets:"
 msgstr ""
 
-#: ../twitter-widget.php:82
+#: ../twitter-widget.php:116
+msgid "Cache Expire (s):"
+msgstr ""
+
+#: ../twitter-widget.php:220
 msgid "follow on twitter &rarr;"
 msgstr ""
