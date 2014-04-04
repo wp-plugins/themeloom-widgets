@@ -37,7 +37,7 @@ class ThemeLoom_Facebook_Widget extends WP_Widget {
 
  	public function form( $instance ) {
 		/* Set up some default widget settings. */
-		$defaults = array( 'title' => __('Facebook Page Feed', 'livingos'), 'app_id' => '', 'app_sc' => '', 'page_id' => '', 
+		$defaults = array( 'title' => __('Facebook Page Feed', 'livingos'), 'app_id' => '', 'app_sc' => '', 'page_id' => '', 'edge'=>'feed', 'cache_expire'=>21600,
 			'auth_token' => '', 'num_posts' => 3, 'post_meta' => 'on', 'page_title' => 'on', 'show_likes'=> 'on', 'follow_message' => __('Join us on Facebook','livingos')  );
 		$instance = wp_parse_args( (array) $instance, $defaults ); 
 		extract( $instance );
@@ -60,11 +60,11 @@ class ThemeLoom_Facebook_Widget extends WP_Widget {
 		</p>
 		<h3><?php _e('What to Show','livingos'); ?></h3>
 		<p>
-		<label for="<?php echo $this->get_field_name( 'page_id' ); ?>"><?php _e( 'Page ID:' ); ?></label> 
+		<label for="<?php echo $this->get_field_name( 'page_id' ); ?>"><?php _e( 'Page ID:','livingos' ); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id( 'page_id' ); ?>" name="<?php echo $this->get_field_name( 'page_id' ); ?>" type="text" value="<?php echo esc_attr( $page_id ); ?>" />
 		</p>
 		<p>
-		<label for="<?php echo $this->get_field_name( 'num_posts' ); ?>"><?php _e( 'Number of items to show:' ); ?></label> 
+		<label for="<?php echo $this->get_field_name( 'num_posts' ); ?>"><?php _e( 'Number of items to show:','livingos' ); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id( 'num_posts' ); ?>" name="<?php echo $this->get_field_name( 'num_posts' ); ?>" type="text" value="<?php echo esc_attr( $num_posts ); ?>" />
 		</p>
 		<p>
@@ -77,10 +77,19 @@ class ThemeLoom_Facebook_Widget extends WP_Widget {
 		<p>
 		<input class="checkbox" type="checkbox" <?php checked( $instance['show_likes'], 'on' ); ?> id="<?php echo $this->get_field_id( 'show_likes' ); ?>" name="<?php echo $this->get_field_name( 'show_likes' ); ?>" />
 		<label for="<?php echo $this->get_field_id('show_likes'); ?>"><?php _e('Show Likes count','livingos'); ?></label> </p>
-		<p>
+        <p>
+            <label for="<?php echo $this->get_field_id('edge'); ?>"><?php _e('Feed : ','livingos');?></label><br />
+            <input type="radio" name="<?php echo $this->get_field_name('edge'); ?>" value="feed" <?php echo checked($instance['edge'],"feed",false); ?>/> <?php _e('All Activity','livingos');?>
+            <input type="radio" name="<?php echo $this->get_field_name('edge'); ?>" value="posts" <?php echo checked($instance['edge'],"posts",false); ?>/> <?php _e('Only Page\'s Posts ','livingos');?><br />
+         </p>
+        <p>
 		<label for="<?php echo $this->get_field_name( 'follow_message' ); ?>"><?php _e( 'Follow button message:' ); ?></label> 
 		<input class="widefat" id="<?php echo $this->get_field_id( 'follow_message' ); ?>" name="<?php echo $this->get_field_name( 'follow_message' ); ?>" type="text" value="<?php echo esc_attr( $follow_message ); ?>" />
 		</p>
+        <p>
+            <label for="<?php echo $this->get_field_name( 'cache_expire' ); ?>"><?php _e( 'Cache (s):','livingos' ); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'cache_expire' ); ?>" name="<?php echo $this->get_field_name( 'cache_expire' ); ?>" type="text" value="<?php echo esc_attr( $cache_expire ); ?>" />
+        </p>
 		<?php 
 	}
 
@@ -88,19 +97,30 @@ class ThemeLoom_Facebook_Widget extends WP_Widget {
 		// processes widget options to be saved
 		$instance = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
-		$instance['app_id'] = ( ! empty( $new_instance['app_id'] ) ) ? strip_tags( $new_instance['app_id'] ) : '';
+
+        $instance['app_id'] = ( ! empty( $new_instance['app_id'] ) ) ? strip_tags( $new_instance['app_id'] ) : '';
 		$instance['app_sc'] = ( ! empty( $new_instance['app_sc'] ) ) ? strip_tags( $new_instance['app_sc'] ) : '';
 		$instance['page_id'] = ( ! empty( $new_instance['page_id'] ) ) ? strip_tags( $new_instance['page_id'] ) : '';
 		$instance['num_posts'] = ( ! empty( $new_instance['num_posts'] ) ) ? strip_tags( $new_instance['num_posts'] ) : '';
 		$instance['post_meta'] =  $new_instance['post_meta'] ;
 		$instance['page_title'] =  $new_instance['page_title'] ;
 		$instance['show_likes'] =  $new_instance['show_likes'] ;
-		$instance['follow_message'] = ( ! empty( $new_instance['follow_message'] ) ) ? strip_tags( $new_instance['follow_message'] ) : '';
+        $instance['edge'] =  $new_instance['edge'] ;
+        $instance['cache_expire'] = intval ( $new_instance['cache_expire'] );
+        if (  $instance['cache_expire']  < 3600)  $instance['cache_expire'] = 3600;
+
+        $instance['follow_message'] = ( ! empty( $new_instance['follow_message'] ) ) ? strip_tags( $new_instance['follow_message'] ) : '';
 		
 		//get access token
 		$instance['auth_token'] = livingos_get_fb_access_token( $instance['app_id'], $instance['app_sc'] );
-		
-		return $instance;
+
+        // clear any cache when user saves widget
+        $cachename = "fbfeed-" . md5( $instance['page_id'] . $instance['auth_token'] . $instance['num_posts'] .$instance['edge'] );
+        delete_transient( $cachename );
+        $cachename = "fbpage-" . md5( $instance['page_id']. $instance['auth_token'] );
+        delete_transient( $cachename );
+
+        return $instance;
 	}
 }
 
@@ -145,10 +165,10 @@ function livingos_get_fb_page_info( $page_id, $auth_token, $cache_expire = 21600
 /*
  * Get page fee
  */
-function livingos_get_fb_page_feed( $page_id, $auth_token, $num_posts, $cache_expire = 21600 ){
+function livingos_get_fb_page_feed( $page_id, $auth_token, $num_posts, $edge = 'feed', $cache_expire = 21600 ){
 	
 	//Page Feed : check cache
-	$cachename = "fbfeed-" . md5( $page_id . $auth_token . $num_posts );
+	$cachename = "fbfeed-" . md5( $page_id . $auth_token . $num_posts .$edge );
 	$feedarray = get_transient( $cachename );
 	
 	if ( empty( $feedarray ) ){
@@ -156,7 +176,8 @@ function livingos_get_fb_page_feed( $page_id, $auth_token, $num_posts, $cache_ex
 	    //cache empty
 		
 		//get page feed
-		$json_object = livingos_fetchUrl( "https://graph.facebook.com/{$page_id}/feed?limit={$num_posts}&{$auth_token}" );
+		$json_object = livingos_fetchUrl( "https://graph.facebook.com/{$page_id}/{$edge}?limit={$num_posts}&{$auth_token}" );
+
 		$feedarray = json_decode($json_object);
 		
 		if ( isset($feedarray) ) {
@@ -183,7 +204,8 @@ function livingos_get_fb_page_feed( $page_id, $auth_token, $num_posts, $cache_ex
 		'page_title' => true,
 		'show_likes' => true,
 		'follow_message' => __('Join us on Facebook','livingos'),
-		'cache_expire' => 21600
+		'cache_expire' => 21600,
+        'edge' => 'feed'
 	);
 	$args = wp_parse_args( $args, $defaults );
 	
@@ -201,8 +223,8 @@ function livingos_get_fb_page_feed( $page_id, $auth_token, $num_posts, $cache_ex
 	}
 	
 	// get feed
-	$feedarray = livingos_get_fb_page_feed( $args['page_id'], $args['auth_token'], $args['num_posts'], $args['cache_expire'] );
-	
+	$feedarray = livingos_get_fb_page_feed( $args['page_id'], $args['auth_token'], $args['num_posts'],  $args['edge'], $args['cache_expire'] );
+
 	// process feed 
 	$output .= "<ul class=\"facebook-feed\">";
 	if (!empty($feedarray)) {
