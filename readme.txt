@@ -18,7 +18,7 @@ A set of useful widgets created for adding more fluid content to any theme. Espe
 *	Show Pages Widget" - Shows thumbs/excerpts of child pages of defined parent page.
 *	flickr Widget - Show flickr thumbs
 *	Twitter Widget - show your latest tweets
-*	Facebook Widget - show your facebook page feed
+*	Facebook Widget - show your facebook page feed without slowing your site down and in a responsive way!
 
 And also adds a powerful shortcode for using the show posts/pages functionality in a post or page.
 
@@ -74,6 +74,11 @@ for further information see [ThemeLoom](http://themeloom.com/ "The ThemeLoom")
 3. Example facebook front end.
 
 == Changelog ==
+
+= 1.6 =
+* Added page feed option to show all or only Page's posts in feed
+* Now clears cache on widget save
+* Cache expire period now editable in widget
 
 = 1.5 =
 * Added Spanish language files (thanks to Andrew Kurtis)

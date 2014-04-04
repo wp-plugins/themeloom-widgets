@@ -2,7 +2,7 @@
 /*
 Plugin Name: ThemeLoom Widgets
 Description: A set of really useful widgets for showing posts, pages, tweets and your flickr images. Designed for use with responsive themes.
-Version: 1.5
+Version: 1.6
 License: GPLv2
 Author: Tim Hyde
 Author URI: http://livingos.com/
