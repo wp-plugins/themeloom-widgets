@@ -3,7 +3,7 @@ Contributors: livinogs
 Donate link: http://livingos.com/
 Tags: widgets, posts, pages, query, responsive, twitter, flickr, facebook
 Requires at least: 3.5
-Tested up to: 3.8.1
+Tested up to: 4.2.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -74,6 +74,9 @@ for further information see [ThemeLoom](http://themeloom.com/ "The ThemeLoom")
 3. Example facebook front end.
 
 == Changelog ==
+
+= 1.7 =
+* Updated to latest facebook api
 
 = 1.6 =
 * Added page feed option to show all or only Page's posts in feed

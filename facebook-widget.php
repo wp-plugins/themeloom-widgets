@@ -150,7 +150,7 @@ function livingos_get_fb_page_info( $page_id, $auth_token, $cache_expire = 21600
 		
 		//get page details
 		$json_object = livingos_fetchUrl( "https://graph.facebook.com/{$page_id}?{$auth_token}" );
-		
+
 		$pageinfo = json_decode($json_object);
 		
 		if ( isset($pageinfo) ) {
@@ -176,7 +176,7 @@ function livingos_get_fb_page_feed( $page_id, $auth_token, $num_posts, $edge = '
 	    //cache empty
 		
 		//get page feed
-		$json_object = livingos_fetchUrl( "https://graph.facebook.com/{$page_id}/{$edge}?limit={$num_posts}&{$auth_token}" );
+		$json_object = livingos_fetchUrl( "https://graph.facebook.com/v2.3/{$page_id}/{$edge}?limit={$num_posts}&{$auth_token}" );
 
 		$feedarray = json_decode($json_object);
 		
@@ -211,7 +211,7 @@ function livingos_get_fb_page_feed( $page_id, $auth_token, $num_posts, $edge = '
 	
 	//Page info
 	$pageinfo = livingos_get_fb_page_info( $args['page_id'], $args['auth_token'], $args['cache_expire']);
-	
+
 	
 	// show page info
 	if ( $args['page_title'] ) {
