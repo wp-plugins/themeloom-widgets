@@ -176,7 +176,7 @@ function livingos_get_fb_page_feed( $page_id, $auth_token, $num_posts, $edge = '
 	    //cache empty
 		
 		//get page feed
-		$json_object = livingos_fetchUrl( "https://graph.facebook.com/v2.4/{$page_id}/{$edge}?fields=from,message,created_time,description,story,picture&limit={$num_posts}&{$auth_token}" );
+		$json_object = livingos_fetchUrl( "https://graph.facebook.com/v2.4/{$page_id}/{$edge}?fields=from,message,created_time,description,story,type,picture&limit={$num_posts}&{$auth_token}" );
 
 		$feedarray = json_decode($json_object);
 		
