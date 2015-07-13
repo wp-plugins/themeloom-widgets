@@ -75,6 +75,9 @@ for further information see [ThemeLoom](http://themeloom.com/ "The ThemeLoom")
 
 == Changelog ==
 
+= 1.8.1 =
+* fixed missing fields in fb feed
+
 = 1.8 =
 * fixed issue with api 2.4
 
